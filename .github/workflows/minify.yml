@@ -17,5 +17,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Build: minify passwords script'
-          file_pattern: assets/p1984.min.js
+          file_pattern: p1984.min.js
           branch: $GITHUB_REF_NAME
