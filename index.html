@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Accès protégé</title>
-    <script src="p1984.min.js"></script> <!-- fichier de mots de passe minifié -->  <style>
+    <!-- Script contenant la table des mots de passe minifiée -->
+    <script src="assets/p1984.min.js"></script>
+  <style>
     body {
       max-width: 600px;
       margin: 2rem auto;
@@ -27,6 +29,7 @@
     const form = document.getElementById("loginForm");
     const msg  = document.getElementById("msg");
 
+    // Au submit, on vérifie si le mot de passe existe dans passwordMapping
     form.addEventListener("submit", function (evt) {
       evt.preventDefault();
       const pwd = document.getElementById("pwd").value.trim();
