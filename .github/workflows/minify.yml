@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - run: npm install
+      - run: npm ci
       - run: npm run minify
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Build: minify passwords script'
-          file_pattern: p1984.min.js
-          branch: $GITHUB_REF_NAME
+          file_pattern: 'assets/p1984.min.js'
+          branch: ${{ github.ref_name }}
