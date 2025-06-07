@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "terser assets/p1984.js -o assets/p1984.min.js --compress --mangle",
-    "watch": "terser assets/p1984.js -o assets/p1984.min.js --compress --mangle --watch"
+    "minify": "terser p1984.js -o p1984.min.js --compress --mangle",
+    "watch": "terser p1984.js -o p1984.min.js --compress --mangle --watch"
   },
   "keywords": [],
   "author": "",
