@@ -1,0 +1,19 @@
+{
+  "name": "cours-maths",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "terser assets/p1984.js -o assets/p1984.min.js --compress --mangle",
+    "watch": "chokidar 'assets/p1984.js' -c 'npm run minify'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "terser": "^5.30.0"
+  }
+}

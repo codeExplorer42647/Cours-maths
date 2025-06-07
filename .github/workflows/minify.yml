@@ -1,0 +1,31 @@
+name: Minify JS
+
+on:
+  push:
+    branches: [ main ]  # Exécute le workflow sur chaque push sur la branche principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Récupère le code du dépôt
+      - uses: actions/checkout@v3
+
+      # Installe Node.js pour disposer de npm et de terser
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Installe les dépendances déclarées dans package.json
+      - run: npm install
+
+      # Lance la minification du fichier assets/p1984.js
+      - run: npm run minify
+
+      # Commit automatique du fichier minifié s'il a changé
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Build: minify passwords script'
+          file_pattern: 'assets/p1984.min.js'
+          branch: ${{ github.ref_name }}
+
