@@ -28,4 +28,3 @@ jobs:
           commit_message: 'Build: minify passwords script'
           file_pattern: 'assets/p1984.min.js'
           branch: ${{ github.ref_name }}
-
