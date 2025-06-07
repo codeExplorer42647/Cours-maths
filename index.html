@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Accès protégé</title>
+  <script src="passwords.js"></script> <!-- Contient la table des mots de passe -->
+  <style>
+    body {
+      max-width: 600px;
+      margin: 2rem auto;
+      font-family: sans-serif;
+    }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Page protégée</h1>
+  <p>Entrez votre mot de passe pour accéder au document :</p>
+
+  <form id="loginForm">
+    <input type="password" id="pwd" placeholder="Mot de passe" required>
+    <button type="submit">Valider</button>
+  </form>
+
+  <p id="msg" class="error"></p>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const msg  = document.getElementById("msg");
+
+    form.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+      const pwd = document.getElementById("pwd").value.trim();
+      if (passwordMapping[pwd]) {
+        window.location.href = passwordMapping[pwd];
+      } else {
+        msg.textContent = "Mot de passe invalide.";
+      }
+    });
+  </script>
+</body>
+</html>
